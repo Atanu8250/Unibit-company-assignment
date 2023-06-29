@@ -6,38 +6,38 @@ findTargetSumWithSet(arr, target);
 
 
 function findTargetSumFromArr(arr, target) {
-     const results = [];
+     const pairs = [];
 
      // Iterate through each pair of elements in the array
      for (let i = 0; i < arr.length - 1; i++) {
           for (let j = i + 1; j < arr.length; j++) {
                // Sort the pair in descending order
-               const [x, y] = [arr[i], arr[j]].sort((a, b) => b - a);
+               const [num1, num2] = [arr[i], arr[j]].sort((a, b) => b - a);
 
                // Check if the pair sums up to the target and is distinct from existing results
-               if (x + y === target && isDistinct(results, [x, y])) {
-                    results.push([x, y]);
+               if (num1 + num2 === target && isDistinct(pairs, [num1, num2])) {
+                    pairs.push([num1, num2]);
                }
           }
      }
 
      console.log(`For target: ${target}, below result:`);
-     console.log(results);
+     console.log(pairs);
 
-     // Flatten the results array and sort it in ascending order
-     const combination = results.flat().sort((a, b) => a - b);
-     console.log('combination:', combination);
+     // Flatten the pairs array and sort it in ascending order
+     const flattenedPairs = pairs.flat().sort((a, b) => a - b);
+     console.log('flattenedPairs:', flattenedPairs);
 
-     const doubleRes = [];
-     // Find all combinations of elements in the combination array that sum up to the target multiplied by 2
-     checkForDoubleTarget(combination, target * 2, 0, 0, [], doubleRes);
-     console.log('doubleRes:', doubleRes);
+     const doublePairs = [];
+     // Find all combinations of elements in the flattenedPairs array that sum up to the target multiplied by 2
+     checkForDoubleTarget(flattenedPairs, target * 2, 0, 0, [], doublePairs);
+     console.log('doublePairs:', doublePairs);
 }
 
-function isDistinct(arr, [x, y]) {
-     // Check if the pair [x, y] already exists in the results array
-     for (let [i, j] of arr) {
-          if (x === i && y === j) {
+function isDistinct(pairs, [num1, num2]) {
+     // Check if the pair [num1, num2] already exists in the pairs array
+     for (let [x, y] of pairs) {
+          if (num1 === x && num2 === y) {
                return false;
           }
      }
@@ -82,13 +82,13 @@ function findTargetSumByPointers(arr, target) {
      console.log(pairs);
 
      // Flatten the pairs array and sort it in ascending order
-     const combination = pairs.flat().sort((a, b) => a - b);
-     console.log('combination:', combination);
+     const flattenedPairs = pairs.flat().sort((a, b) => a - b);
+     console.log('flattenedPairs:', flattenedPairs);
 
-     const doubleRes = [];
-     // Find all combinations of elements in the combination array that sum up to the target multiplied by 2
-     checkForDoubleTarget(combination, target * 2, 0, 0, [], doubleRes);
-     console.log('doubleRes:', doubleRes);
+     const doublePairs = [];
+     // Find all combinations of elements in the flattenedPairs array that sum up to the target multiplied by 2
+     checkForDoubleTarget(flattenedPairs, target * 2, 0, 0, [], doublePairs);
+     console.log('doublePairs:', doublePairs);
 }
 
 
@@ -116,17 +116,19 @@ function findTargetSumWithSet(arr, target) {
      console.log(`For target: ${target}, below result:`);
      console.log(pairs);
 
+
      // Flatten the pairs array and sort it in ascending order
-     const combination = pairs.flat().sort((a, b) => a - b);
+     const flattenedPairs = pairs.flat().sort((a, b) => a - b);
+     console.log('flattenedPairs:', flattenedPairs);
+
+     const doublePairs = [];
+     // Find all combinations of elements in the flattenedPairs array that sum up to the target multiplied by 2
+     checkForDoubleTarget(flattenedPairs, target * 2, 0, 0, [], doublePairs);
      // TC for `flat & sort` => O(m log m)
      // SC => O(m)
      //  - where m is the number of pairs.
-     console.log('combination:', combination);
-
-     const doubleRes = [];
-     // Find all combinations of elements in the combination array that sum up to the target multiplied by 2
-     checkForDoubleTarget(combination, target * 2, 0, 0, [], doubleRes);
-     console.log('doubleRes:', doubleRes);
+     console.log('doublePairs:', doublePairs);
+     
 }
 
 // Time-Complexity: O(N)
