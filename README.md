@@ -22,7 +22,7 @@ The provided code consists of three functions: `findTargetSumFromArr`, `findTarg
 ### 1. `findTargetSumFromArr`
 
 <details>
-<summary><i><b><u>Code</u></b></i></summary>
+<summary><b><u>Code</u></b></summary>
 
 ```javascript
 function findTargetSumFromArr(arr, target) {
@@ -41,7 +41,7 @@ function findTargetSumFromArr(arr, target) {
           }
      }
 
-     console.log(`For target: ${target}, below result:`);
+     console.log(`For target: ${target}, result below:`);
      console.log(pairs);
 
      // Flatten the pairs array and sort it in ascending order
@@ -51,7 +51,8 @@ function findTargetSumFromArr(arr, target) {
      const doublePairs = [];
      // Find all combinations of elements in the flattenedPairs array that sum up to the target multiplied by 2
      checkForDoubleTarget(flattenedPairs, target * 2, 0, 0, [], doublePairs);
-     console.log('doublePairs:', doublePairs);
+     console.log(`Second Combination For “${target*2}”, result below :`)
+     console.log(doublePairs)
 }
 
 function isDistinct(pairs, [num1, num2]) {
@@ -85,7 +86,7 @@ This function takes an array (`arr`) and a target value (`target`) as input. It 
 ### 2. `findTargetSumByPointers`
 
 <details>
-<summary><i><b><u>Code</u></b></i></summary>
+<summary><b><u>Code</u></b></summary>
 
 ```javascript
 function findTargetSumByPointers(arr, target) {
@@ -114,7 +115,7 @@ function findTargetSumByPointers(arr, target) {
           }
      }
 
-     console.log(`For target: ${target}, below result:`);
+     console.log(`For target: ${target}, result below:`);
      console.log(pairs);
 
      // Flatten the pairs array and sort it in ascending order
@@ -124,7 +125,8 @@ function findTargetSumByPointers(arr, target) {
      const doublePairs = [];
      // Find all combinations of elements in the flattenedPairs array that sum up to the target multiplied by 2
      checkForDoubleTarget(flattenedPairs, target * 2, 0, 0, [], doublePairs);
-     console.log('doublePairs:', doublePairs);
+     console.log(`Second Combination For “${target*2}”, result below :`)
+     console.log(doublePairs)
 }
 ```
           
@@ -150,7 +152,7 @@ This function takes an array (`arr`) and a target value (`target`) as input. It 
 ### 3. `findTargetSumWithSet`
 
 <details>
-<summary><i><b><u>Code</u></b></i></summary>
+<summary><b><u>Code</u></b></summary>
 
 ```javascript
 function findTargetSumWithSet(arr, target) {
@@ -168,7 +170,7 @@ function findTargetSumWithSet(arr, target) {
           visited.add(arr[i]);
      }
 
-     console.log(`For target: ${target}, below result:`);
+     console.log(`For target: ${target}, result below:`);
      console.log(pairs);
 
 
@@ -182,7 +184,8 @@ function findTargetSumWithSet(arr, target) {
      // TC for `flat & sort` => O(m log m)
      // SC => O(m)
      //  - where m is the number of pairs.
-     console.log('doublePairs:', doublePairs);
+     console.log(`Second Combination For “${target*2}”, result below :`)
+     console.log(doublePairs)
      
 }
 ```
@@ -208,7 +211,7 @@ This function takes an array (`arr`) and a target value (`target`) as input. It 
 ### 4. `checkForDoubleTarget`
 
 <details>
-<summary><i><b><u>Code</u></b></i></summary>
+<summary><b><u>Code</u></b></summary>
 
 ```javascript
 function checkForDoubleTarget(arr, target, index, sum, current, res) {

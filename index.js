@@ -21,7 +21,7 @@ function findTargetSumFromArr(arr, target) {
           }
      }
 
-     console.log(`For target: ${target}, below result:`);
+     console.log(`For target: ${target}, result below:`);
      console.log(pairs);
 
      // Flatten the pairs array and sort it in ascending order
@@ -31,7 +31,8 @@ function findTargetSumFromArr(arr, target) {
      const doublePairs = [];
      // Find all combinations of elements in the flattenedPairs array that sum up to the target multiplied by 2
      checkForDoubleTarget(flattenedPairs, target * 2, 0, 0, [], doublePairs);
-     console.log('doublePairs:', doublePairs);
+     console.log(`Second Combination For “${target*2}”, result below :`);
+     console.log(doublePairs)
 }
 
 function isDistinct(pairs, [num1, num2]) {
@@ -78,7 +79,7 @@ function findTargetSumByPointers(arr, target) {
           }
      }
 
-     console.log(`For target: ${target}, below result:`);
+     console.log(`For target: ${target}, result below:`);
      console.log(pairs);
 
      // Flatten the pairs array and sort it in ascending order
@@ -88,7 +89,8 @@ function findTargetSumByPointers(arr, target) {
      const doublePairs = [];
      // Find all combinations of elements in the flattenedPairs array that sum up to the target multiplied by 2
      checkForDoubleTarget(flattenedPairs, target * 2, 0, 0, [], doublePairs);
-     console.log('doublePairs:', doublePairs);
+     console.log(`Second Combination For “${target*2}”, result below :`);
+     console.log(doublePairs)
 }
 
 
@@ -113,7 +115,7 @@ function findTargetSumWithSet(arr, target) {
           visited.add(arr[i]);
      }
 
-     console.log(`For target: ${target}, below result:`);
+     console.log(`For target: ${target}, result below:`);
      console.log(pairs);
 
 
@@ -127,7 +129,8 @@ function findTargetSumWithSet(arr, target) {
      // TC for `flat & sort` => O(m log m)
      // SC => O(m)
      //  - where m is the number of pairs.
-     console.log('doublePairs:', doublePairs);
+     console.log(`Second Combination For “${target*2}”, result below :`);
+     console.log(doublePairs)
      
 }
 
