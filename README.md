@@ -265,7 +265,7 @@ This helper function is used by both `findTargetSumFromArr` and `findTargetSumBy
   - Time Complexity: O(2^N) (N is the number of elements in the array)
   - Space Complexity: O(N)
 
-Overall time complexity and space complexity of the entire code can be approximated as O(N + M log M + 2^M) when using `findTargetSumWithSet`, where N is the number of elements in the array and M is the number of pairs found.
+The time complexity and space complexity of the entire code can be approximated as O(N + M log M + 2^M) when using `findTargetSumWithSet`, where N is the number of elements in the array and M is the number of pairs found.
 
 Note: The space complexity analysis considers the dominant factors contributing to space usage.
 
